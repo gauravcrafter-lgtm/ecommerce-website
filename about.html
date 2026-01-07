@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="allpage.css">
+   
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+ <!-- External JS file link -->
+    <script src="projects.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <title>Allensolly</title>
+</head>
+<style>
+     /* navbar color==========================================================> */
+        
+    /* Default sab black */
+.navbar-nav .nav-link {
+  color: #000 !important;
+  transition: color 0.3s ease;
+}
+
+/* Sirf Home hamesha red */
+.navbar-nav .nav-link.home-active {
+  color: red !important;
+  font-weight: 600;
+}
+
+/* Baaki links hover pe red */
+.navbar-nav .nav-link:not(.home-active):hover {
+  color: red !important;
+}
+    /* navbar color end======================================================> */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .section p {
+      font-size: 1em;
+      color: #555;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 30px 20px;
+      max-width: 450px;
+      flex: 1;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .card i {
+      font-size: 2em;
+      color: #e63946;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+  
+</style>
+<body style="margin:0;">
+
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="#">ALLENSOLLY</a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- COLLAPSE -->
+    <div class="collapse navbar-collapse" id="nav">
+
+      <!-- MENU (CENTER) -->
+      <ul class="navbar-nav mx-lg-auto gap-4">
+        <li class="nav-item   " ><a class="nav-link active "  style="color: black;" href="HOME.HTML">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color:black;" href="carrers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- ICONS (RHS + SAME GAP AS LOGO RHS) -->
+      <div class="d-flex align-items-center gap-4 ms-lg-3">
+
+        <!-- User icon -->
+        <a href="#" class="text-dark fs-5">
+          <i class="fa-regular fa-user"></i>
+        </a>
+  <a href="#" class="text-dark fs-5 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+          <div class="cart-box">
+            <i class="fa-solid fa-cart-shopping"></i>
+            
+          </div>
+          <span id="cartCount"  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">0</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Banner text -->
+<div class="d-flex justify-content-center align-items-center" style="background-color: black; color: white; height: 30px;">
+  <p class="m-0" style="font-size: 13px;">Get 15% off on your first order.</p>
+</div>
+
+<!-- banner start -->
+ <!-- Image Banner -->
+<div class="bgcont">
+  <div class="smphoto position-relative">
+    <img src="about.jpg" class="img-fluid w-100" alt="Fashion Banner" style="height: 450px; object-fit: cover;">
+    
+    <!-- Overlay Text -->
+    <div class="texts position-absolute top-80 start-60 translate-middle text-center text-light px-4 " style="top: 200px;" >
+      <h1 class="fs-1 fw-bold mb-3" style="font-family: 'Arial', sans-serif; letter-spacing: 1px; line-height: 1.2;">
+        Style That Moves With You
+      </h1>
+      <p class="fs-6 mb-4" style="font-family: 'Arial', sans-serif; font-weight: 400; max-width: 600px; margin: 0 auto;">
+       Born from a passion for timeless design and everyday comfort
+      </p>
+     
+    </div>
+  </div>
+</div>
+ <!-- banner end -->
+  <!-- =========================================================== -->
+   <!-- ================= WHY US SECTION ================= -->
+<section class="container  py-3">
+
+  <!-- Heading -->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">What Makes Velora Stand Out</h2>
+    <p class="text-muted mt-2">
+      Style, Comfort & More – Here’s Why You’ll Love Us
+    </p>
+  </div>
+
+  <!-- Cards -->
+  <div class="row g-4 justify-content-center">
+
+    <!-- Card 1 -->
+    <div class="col-md-3">
+      <div class="border rounded-4 p-4 h-100 text-center">
+        <i class="fa-solid fa-shirt text-danger fs-1 mb-3"></i>
+        <h6 class="fw-bold">Premium Quality</h6>
+        <p class="text-muted mt-2">
+          Crafted with care using soft, durable fabrics designed to last and feel amazing.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-3">
+      <div class="border rounded-4 p-4 h-100 text-center">
+        <i class="fa-solid fa-user-tie text-danger fs-1 mb-3"></i>
+        <h6 class="fw-bold">Timeless Style</h6>
+        <p class="text-muted mt-2">
+          Clean silhouettes and versatile pieces you can wear season after season.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-3">
+      <div class="border rounded-4 p-4 h-100 text-center">
+        <i class="fa-solid fa-pen-ruler text-danger fs-1 mb-3"></i>
+        <h6 class="fw-bold">In-House Design</h6>
+        <p class="text-muted mt-2">
+          Every detail is imagined by our in-house design team to bring standout staples.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-3">
+      <div class="border rounded-4 p-4 h-100 text-center">
+        <i class="fa-solid fa-users text-danger fs-1 mb-3"></i>
+        <h6 class="fw-bold">For Every Body</h6>
+        <p class="text-muted mt-2">
+          Inclusive fits and sizes designed to flatter all shapes, ages, and styles.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ================= END SECTION ================= -->
+
+   <!-- =========================================================== -->
+    <!-- ================= THOUGHTFULLY DESIGNED SECTION ================= -->
+<section class="container-fluid px-0 my-5">
+  <div class="row g-0 align-items-stretch">
+
+    <!-- LEFT CONTENT -->
+    <div class="col-md-6 bg-black text-white d-flex align-items-center">
+      <div class="p-5">
+
+        <h2 class="fw-bold mb-4">
+          Thoughtfully Designed for <br> All
+        </h2>
+
+        <p class="text-secondary">
+          Our range covers Men, Women, and Kids, with each piece carefully
+          crafted to combine form, function, and feeling. From the perfect
+          polo to the softest loungewear and statement outerwear, everything
+          at Velora is designed with real life in mind – easy to wear,
+          easy to love.
+        </p>
+
+        <p class="text-secondary">
+          We also believe in the power of details. That’s why we obsess over
+          fit, fabric, and finish – so you don’t have to.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="col-md-6">
+      <img 
+        src="about.jpg"
+        alt="Fashion Models"
+        class="img-fluid w-100 h-100 object-fit-cover">
+    </div>
+
+  </div>
+</section>
+<!-- ================= END SECTION ================= -->
+
+    <!-- ========================================================== -->
+     <section class="section">
+    <h2>Our Purpose, Your Style</h2>
+    <p>At Velora, everything we create starts with you — your lifestyle, your confidence, and your need for fashion that truly fits.</p>
+
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-eye"></i>
+        <h3>Our Mission</h3>
+        <p>To create timeless, high-quality fashion that blends comfort with confidence. We empower individuals of all ages with clothing that fits seamlessly into real life.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Vision</h3>
+        <p>To become a trusted global fashion destination that redefines modern essentials. We envision a world where style is accessible and self-expression is celebrated.</p>
+      </div>
+    </div>
+  </section>
+<!-- ============================================================= -->
+<!-- ====image area ========================================== -->
+ <section class="py-5">
+  <div class="container text-center">
+
+    <!-- Heading -->
+    <h2 class="fw-bold mb-2">Get 10% Off on Your First Order</h2>
+    <p class="text-muted mb-5">
+      Plus exclusive access to product drops, style tips, and insider deals.
+    </p>
+
+    <!-- Images Row -->
+    <div class="row g-2 justify-content-center">
+
+    <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+      <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+
+      <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+      <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+    </div>
+
+    <!-- Follow -->
+    <div class="mt-5 d-flex justify-content-center align-items-center gap-2">
+      <i class="bi bi-instagram text-danger fs-5"></i>
+      <span class="fw-semibold">Follow us</span>
+      <span class="text-muted">@Allensolly</span>
+    </div>
+
+  </div>
+</section>
+ <!-- ====image area end==================================================== -->
+<!-- ============2nd last section start -->
+ <section class="py-5" style="background:#fff1f2;">
+  <div class="container">
+    <div class="row text-center g-3">
+
+      <!-- Free Delivery -->
+      <div class="col-sm-3">
+        <i class="fa-solid fa-truck fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Free Standard Delivery</h6>
+        <p class="text-muted mb-0">On all Orders Over $100</p>
+      </div>
+
+      <!-- Quick Delivery -->
+      <div class="col-sm-3">
+        <i class="fa-regular fa-truck fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Quick Delivery</h6>
+        <p class="text-muted mb-0">Delivery within 3 Days across US</p>
+      </div>
+
+      <!-- Secure Payments -->
+      <div class="col-sm-3">
+        <i class="fa-solid fa-money-bill fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Secure Payments</h6>
+        <p class="text-muted mb-0">Secure Payment Methods</p>
+      </div>
+
+      <!-- Customer Support -->
+      <div class="col-sm-3">
+        <i class="fa-solid fa-user fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Top Rated Customer Service</h6>
+        <p class="text-muted mb-0">Quick Responses & Solutions</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- ==========================2nd last section end -->
+<!-- offcanva start ------------------------------------------------------------------------------------->
+   <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartOffcanvasLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <!-- Container jahan items dynamically inject honge -->
+    <div id="cartItems" class="d-flex flex-wrap gap-2">
+      <!-- JS se items yahan add honge -->
+    </div>
+
+    <!-- Total & Checkout -->
+    <div class="mt-3">
+      <h6>Your Total amount</h6><h6 id="totalPrice"></h6>
+    <button class="btn btn-dark bg-danger w-100 mt-2" onclick="location.href='order.html'">
+  🔒 Place Order
+</button>
+
+    </div>
+  </div>
+</div>
+<!-- offcanva end================================================================= -->
+ <!-- ================= FOOTER START ================= -->
+<footer class="bg-black text-white pt-5">
+  <div class="container">
+
+    <div class="row ">
+
+      <!-- Brand -->
+      <div class="col-md-3">
+        <h4 class="fw-bold d-flex align-items-center gap-2">
+          
+          Allensolly
+        </h4>
+
+        <p class="text-secondary mt-3">
+          Classic looks for Men,<br>
+          Women & Kids.
+        </p>
+
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled text-secondary">
+          <li class="text">Home</li>
+          <li class="mt-2">Shop</li>
+          <li class="mt-2">About</li>
+          <li class="mt-2">Contact</li>
+        </ul>
+      </div>
+
+      <!-- Shop -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Shop</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>Mens Wear</li>
+          <li class="mt-2">Womens Wear</li>
+          <li class="mt-2">Kids Wear</li>
+          <li class="mt-2">Accessories</li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Help</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>FAQ’s</li>
+          <li class="mt-2">Return Policy</li>
+          <li class="mt-2">Order Status</li>
+          <li class="mt-2">Shipping & Delivery</li>
+        </ul>
+      </div>
+
+      <!-- My Profile -->
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3">My Profile</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>My Account</li>
+          <li class="mt-2">Track Order</li>
+          <li class="mt-2">My Cart</li>
+          <li class="mt-2">Order History</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center text-secondary pb-5">
+      © 2025 Clothing Store. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+<!-- ================= FOOTER END ================= -->
+ 
+
+<!-- ================================================================ -->
+</body>
+</html>

@@ -1,0 +1,321 @@
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Allensolly</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- External JS file link -->
+    <script src="projects.js"></script>
+
+    <style>
+
+       /* stop slider website */
+      :root{
+    overflow-x: hidden;
+  }
+    /* =================== */
+
+    /* Default sab black */
+.navbar-nav .nav-link {
+  color: #000 !important;
+  transition: color 0.3s ease;
+}
+
+/* Sirf Home hamesha red */
+.navbar-nav .nav-link.home-active {
+  color: red !important;
+  font-weight: 600;
+}
+
+/* Baaki links hover pe red */
+.navbar-nav .nav-link:not(.home-active):hover {
+  color: red !important;
+}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checkout-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-weight: 500;
+            margin-top: 25px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .row div {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .place-order {
+            background: rgb(244, 12, 12);
+            color: #fff;
+            padding: 15px;
+            font-size: 17px;
+            border: none;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .place-order:hover {
+            background: #b30a0a;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .payment-note {
+            background: #f8f9fa;
+            padding: 12px;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="#">ALLENSOLLY</a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- COLLAPSE -->
+    <div class="collapse navbar-collapse" id="nav">
+
+      <!-- MENU (CENTER) -->
+      <ul class="navbar-nav mx-lg-auto gap-4">
+        <li class="nav-item   " ><a class="nav-link active  "  style="color: black;" href="HOME.HTML">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color:black;" href="carrers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- ICONS (RHS + SAME GAP AS LOGO RHS) -->
+      <div class="d-flex align-items-center gap-4 ms-lg-3">
+
+        <!-- User icon -->
+        <a href="#" class="text-dark fs-5">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+          <!-- Shopping cart icon with Offcanvas toggle -->
+        <a href="#" class="text-dark fs-5 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+          <div class="cart-box">
+            <i class="fa-solid fa-cart-shopping"></i>
+            
+          </div>
+          <span id="cartCount"  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">0</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="d-flex justify-content-center align-items-center" style="background-color: black; color: white; height: 40px;">
+    <p class="m-0" style="font-size: 13px;">Get 15% off on your first order.</p>
+</div>
+
+<div class="checkout-container">
+    <form id="checkoutForm" onsubmit="return validateCheckout(event)">
+        
+        <h3>Contact</h3>
+        <input type="email" id="email" placeholder="Email Address">
+
+        <h3>Billing Details</h3>
+        <div class="row">
+            <div><input type="text" id="fname" placeholder="First Name"></div>
+            <div><input type="text" id="lname" placeholder="Last Name"></div>
+        </div>
+
+        <select id="country">
+            <option value="">Country / Region</option>
+            <option value="India">India</option>
+        </select>
+
+        <input type="text" id="address" placeholder="Street Address">
+        <input type="text" placeholder="Apartment, suite, unit, etc. (optional)">
+
+        <div class="row">
+            <div><input type="text" id="city" placeholder="Town / City"></div>
+            <div>
+                <select id="state">
+                    <option value="">State</option>
+                    <option>Delhi</option>
+                    <option>Uttar Pradesh</option>
+                    <option>Haryana</option>
+                    <option>Arunachal Pradesh</option>
+                </select>
+            </div>
+            <div><input type="text" id="pin" placeholder="PIN Code"></div>
+        </div>
+
+        <input type="text" id="phone" placeholder="Phone Number">
+
+        <h3>Additional Information</h3>
+        <textarea placeholder="Notes about your order (optional)"></textarea>
+
+        
+        <div id="msg" class="payment-note fs-4 ">
+      
+        </div>
+
+        <p class="error" id="errorMsg"></p>
+
+        <button  type="submit" class="place-order">🔒Place Order</button>
+    </form>
+</div>
+
+<!-- offcanva start ------------------------------------------------------------------------------------->
+   <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartOffcanvasLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <!-- Container jahan items dynamically inject honge -->
+    <div id="cartItems" class="d-flex flex-wrap gap-2">
+      <!-- JS se items yahan add honge -->
+    </div>
+
+    <!-- Total & Checkout -->
+    <div class="mt-3">
+      <h6>Your Total amount</h6><h6 id="totalPrice"></h6>
+    <button class="btn btn-dark bg-danger w-100 mt-2" onclick="location.href='order.html'">
+  🔒 Place Order
+</button>
+
+    </div>
+  </div>
+</div>
+
+
+<footer class="bg-black text-white pt-5">
+    <div class="container text-center text-secondary pb-4">
+        <hr class="border-secondary">
+        © 2025 Clothing Store. All rights reserved.
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function validateCheckout(event) {
+    // Prevent form from submitting automatically
+    event.preventDefault();
+
+    let email = document.getElementById("email").value.trim();
+    let fname = document.getElementById("fname").value.trim();
+    let lname = document.getElementById("lname").value.trim();
+    let country = document.getElementById("country").value;
+    let address = document.getElementById("address").value.trim();
+    let city = document.getElementById("city").value.trim();
+    let state = document.getElementById("state").value;
+    let pin = document.getElementById("pin").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let error = document.getElementById("errorMsg");
+
+    error.innerHTML = "";
+
+    if (email === "" || !email.includes("@")) {
+        error.innerHTML = "Enter valid email address";
+        return false;
+    }
+
+    if (fname === "" || lname === "") {
+        error.innerHTML = "First & Last name required";
+        return false;
+    }
+
+    if (country === "") {
+        error.innerHTML = "Select country";
+        return false;
+    }
+
+    if (address === "") {
+        error.innerHTML = "Street address required";
+        return false;
+    }
+
+    if (city === "" || state === "") {
+        error.innerHTML = "City & State required";
+        return false;
+    }
+
+    if (pin.length !== 6 || isNaN(pin)) {
+        error.innerHTML = "Enter valid 6 digit PIN code";
+        return false;
+    }
+
+    if (phone.length !== 10 || isNaN(phone)) {
+        error.innerHTML = "Enter valid 10 digit phone number";
+        return false;
+    }
+
+    // Success
+   document.getElementById("msg").innerHTML = "Order Placed Successfully ✅";
+
+    // Form reset kar sakte hain success ke baad
+    document.getElementById("checkoutForm").reset();
+    return true;
+}
+</script>
+
+</body>
+</html>

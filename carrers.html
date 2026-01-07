@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="allpage.css">
+    
+    
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- External JS file link -->
+    <script src="projects.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <title>Allensolly</title>
+</head>
+<style>
+
+     /* stop slider website */
+      :root{
+    overflow-x: hidden;
+  }
+    /* =================== */
+     /* navbar color==========================================================> */
+        
+    /* Default sab black */
+.navbar-nav .nav-link {
+  color: #000 !important;
+  transition: color 0.3s ease;
+}
+
+/* Sirf Home hamesha red */
+.navbar-nav .nav-link.home-active {
+  color: red !important;
+  font-weight: 600;
+}
+
+/* Baaki links hover pe red */
+.navbar-nav .nav-link:not(.home-active):hover {
+  color: red !important;
+}
+    /* navbar color end======================================================> */
+</style>
+<body style="margin:0;">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="#">ALLENSOLLY</a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- COLLAPSE -->
+    <div class="collapse navbar-collapse" id="nav">
+
+      <!-- MENU (CENTER) -->
+      <ul class="navbar-nav mx-lg-auto gap-4">
+        <li class="nav-item   " ><a class="nav-link active "  style="color: black;" href="HOME.HTML">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color:black;" href="carrers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- ICONS (RHS + SAME GAP AS LOGO RHS) -->
+      <div class="d-flex align-items-center gap-4 ms-lg-3">
+
+        <!-- User icon -->
+        <a href="#" class="text-dark fs-5">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+         <a href="#" class="text-dark fs-5 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+          <div class="cart-box">
+            <i class="fa-solid fa-cart-shopping"></i>
+            
+          </div>
+          <span id="cartCount"  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">0</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Banner text -->
+<div class="d-flex justify-content-center align-items-center" style="background-color: black; color: white; height: 30px;">
+  <p class="m-0" style="font-size: 13px;">Get 15% off on your first order.</p>
+</div>
+<!-- ================================================ -->
+   <!-- Careers Section -->
+    <section style="text-align: center; padding: 80px 30px; background-color: #f8f0f0;">
+        <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 20px;">Careers at Allensolly</h1>
+        <p style="font-size: 1em; color: #555;">
+            At Velora, you’ll find purpose in your work, passion in your teammates, and growth in every step.
+        </p>
+    </section>
+ <!-- =============================================== -->
+  <br>
+  
+  
+  <section class="py-5">
+  <div class="container" >
+    
+    <div class="row g-5">
+      <div class="col-sm-2">
+
+      </div>
+
+      <!-- Left Image -->
+       
+      <div class="col-sm-4 text-center">
+        <img 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
+          class="img-fluid rounded-4" 
+          alt="career">
+      </div>
+
+      <!-- Right Content -->
+      <div class="col-sm-4"  >
+        <h2 class="fw-bold mb-3">Grow Your Career with Us</h2>
+
+        <p class="text-muted mb-4">
+          Whether you're helping a customer find their perfect fit or designing our
+          next best-selling piece, your work matters here. We value creativity,
+          collaboration, and people who bring fresh ideas to the table.
+        </p>
+
+        <div class="row mb-4">
+          <div class="col-6 mb-2">✅ Fun</div>
+          <div class="col-6 mb-2">✅ Flexibility</div>
+          <div class="col-6">✅ ESOPs</div>
+          <div class="col-6">✅ Growth</div>
+        </div>
+
+        <button class="btn btn-danger rounded-pill px-4 py-2">
+          VIEW OPEN POSITIONS
+        </button>
+      </div>
+ <div class="col-sm-2">
+        
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ============================================== -->
+   <br>
+   
+   <section class="py-5">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center  mb-5">
+      <h2 class="fw-bold">Perks & Benefits</h2>
+      <p class="text-muted">Where Great Work Meets Great Rewards</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row text-center bg-white g-4 justify-content-center">
+<div class="col-sm-2">
+
+</div>
+      <div class="col-md-2">
+        <div class="mb-3">
+          <span class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width:50px;height:50px;">
+            <i class="fa-solid fa-check"></i>
+          </span>
+        </div>
+        <h6 class="fw-bold">Employee Discounts</h6>
+        <p class="text-muted small">
+          Enjoy exclusive discounts & more on Velora styles.
+        </p>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <span class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width:50px;height:50px;">
+            <i class="fa-solid fa-check"></i>
+          </span>
+        </div>
+        <h6 class="fw-bold">Flexible Work</h6>
+        <p class="text-muted small">
+          Choose remote, hybrid, or in-office roles that suit your lifestyle.
+        </p>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <span class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width:50px;height:50px;">
+            <i class="fa-solid fa-check"></i>
+          </span>
+        </div>
+        <h6 class="fw-bold">Career Growth</h6>
+        <p class="text-muted small">
+          Learn, grow, and thrive with clear paths to advancement.
+        </p>
+      </div>
+      
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <span class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width:50px;height:50px;">
+            <i class="fa-solid fa-check"></i>
+          </span>
+        </div>
+        <h6 class="fw-bold">Wellness Support</h6>
+        <p class="text-muted small">
+          Prioritize well-being with access to wellness tools.
+        </p>
+      </div><div class="col-sm-2">
+  
+</div>
+
+    </div>
+  </div>
+</section>
+<!-- offcanva start ------------------------------------------------------------------------------------->
+   <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartOffcanvasLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <!-- Container jahan items dynamically inject honge -->
+    <div id="cartItems" class="d-flex flex-wrap gap-2">
+      <!-- JS se items yahan add honge -->
+    </div>
+
+    <!-- Total & Checkout -->
+    <div class="mt-3">
+      <h6>Your Total amount</h6><h6 id="totalPrice"></h6>
+    <button class="btn btn-dark bg-danger w-100 mt-2" onclick="location.href='order.html'">
+  🔒 Place Order
+</button>
+
+    </div>
+  </div>
+</div>
+<!-- offcanva end================================================================= -->
+   <!-- ============================================= -->
+    <section class="py-5" style="background:#fbf1f1;">
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <!-- Left Content -->
+      <div class="col-md-5 mb-4">
+        <h2 class="fw-bold mb-2">Ready to Join Us?</h2>
+        <p class="text-muted">Let's Make Something Great Together</p>
+      </div>
+
+      <!-- Right Job List -->
+      <div class="col-md-6">
+
+        <!-- Job Item -->
+        <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+          <div>
+            <h6 class="fw-bold mb-1">Graphic Designer – Apparel</h6>
+            <small class="text-muted">Remote or NYC</small>
+          </div>
+          <span class="text-danger fs-3">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+          <div>
+            <h6 class="fw-bold mb-1">Customer Experience Associate</h6>
+            <small class="text-muted">Full-Time, Remote</small>
+          </div>
+          <span class="text-danger fs-3">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+          <div>
+            <h6 class="fw-bold mb-1">Warehouse Coordinator</h6>
+            <small class="text-muted">Los Angeles</small>
+          </div>
+          <span class="text-danger fs-3">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+          <div>
+            <h6 class="fw-bold mb-1">Social Media Manager</h6>
+            <small class="text-muted">Full-Time, Hybrid</small>
+          </div>
+          <span class="text-danger fs-3">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="text-center mt-5">
+      <h6 class="fw-bold mb-2">Don’t see the right role?</h6>
+    <p style="color: red;" > EMAIL US AT JOBS@ALLENSOLLY.COM</p>
+    </div>
+
+  </div>
+</section>
+
+   
+
+
+
+    
+
+    <!-- ============================================ -->
+    <!-- ================= FOOTER START ================= -->
+<footer class="bg-black text-white pt-5">
+  <div class="container">
+
+    <div class="row ">
+
+      <!-- Brand -->
+      <div class="col-md-3">
+        <h4 class="fw-bold d-flex align-items-center gap-2">
+          
+          Allensolly
+        </h4>
+
+        <p class="text-secondary mt-3">
+          Classic looks for Men,<br>
+          Women & Kids.
+        </p>
+
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled text-secondary">
+          <li class="text">Home</li>
+          <li class="mt-2">Shop</li>
+          <li class="mt-2">About</li>
+          <li class="mt-2">Contact</li>
+        </ul>
+      </div>
+
+      <!-- Shop -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Shop</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>Mens Wear</li>
+          <li class="mt-2">Womens Wear</li>
+          <li class="mt-2">Kids Wear</li>
+          <li class="mt-2">Accessories</li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Help</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>FAQ’s</li>
+          <li class="mt-2">Return Policy</li>
+          <li class="mt-2">Order Status</li>
+          <li class="mt-2">Shipping & Delivery</li>
+        </ul>
+      </div>
+
+      <!-- My Profile -->
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3">My Profile</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>My Account</li>
+          <li class="mt-2">Track Order</li>
+          <li class="mt-2">My Cart</li>
+          <li class="mt-2">Order History</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center text-secondary pb-5">
+      © 2025 Clothing Store. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+<!-- ================= FOOTER END ================= -->
+ 
+    
+
+ 
+
+</body>
+</html>

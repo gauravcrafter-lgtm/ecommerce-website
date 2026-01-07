@@ -1,0 +1,186 @@
+/* Container for image with overlay text */
+.smphoto {
+    position: relative;      /* overlay text ke liye */
+    overflow: hidden;
+    width: 100%;
+    height: 550px;           /* desired height */
+}
+
+/* Image styling */
+.smphoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* crop karke full cover */
+    filter: brightness(50%); /* image dark overlay effect */
+    display: block;
+}
+
+/* Overlay text */
+.texts {
+    position: absolute;
+    top: 50%;                /* vertically center */
+    left: 50%;               /* horizontally center */
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;      /* text center align */
+    max-width: 90%;
+}
+
+/* Optional: paragraph inside overlay */
+.smphoto .paragraph {
+    font-size: 1rem;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+    .texts {
+        font-size: 1.5rem;
+    }
+    .smphoto .paragraph {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .texts {
+        font-size: 1.2rem;
+    }
+    .smphoto .paragraph {
+        font-size: 0.8rem;
+    }
+}
+
+/* cartcount start */
+   .cart-icon{
+      font-size: 24px;
+      cursor: pointer;
+      position: relative;
+    }
+    .count{
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+/* cartto count end */
+
+/* offertimer */
+
+
+.sale-section {
+  height: 100vh;
+  background:transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  text-align: center;
+  color: white;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.time-box {
+  background: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.sale-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* offertimer end */
+
+/* what our shopper say start */
+.shopper-review-section {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.shopper-heading {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.shopper-subtext {
+  color: #777;
+  margin-bottom: 60px;
+}
+
+.review-card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.review-box {
+  background: #fdeeee;
+  width: 300px;
+  padding: 30px;
+  border-radius: 22px;
+  position: relative;
+  text-align: left;
+}
+
+.review-highlight {
+  margin-top: -20px;
+}
+
+.review-quote {
+  font-size: 60px;
+  color: #ff4d4d;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.review-text {
+  margin-top: 40px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.review-user img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.review-user span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* what our shopper say end */
+
+/* ------------------foter-----------*/
+
+

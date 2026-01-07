@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ✅ Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+     <button class="btn btn-outline-dark position-relative"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cartCanvas">
+    🛒 Cart
+    <span class="position-absolute top-0 start-100 translate-middle badge bg-danger"
+          id="cartCount">0</span>
+  </button>
+
+  <br>
+  <br>
+   <button class="btn btn-primary"
+            onclick="addToCart('Red Shirt',345,'photo1.jpg','page1.html')">
+            Add to Cart
+          </button>
+           <button class="btn btn-primary"
+            onclick="addToCart('Red Shirt',3444,'photo1.jpg','page1.html')">
+            Add to Cart
+          </button> <button class="btn btn-primary"
+            onclick="addToCart('Red Shirt',345211,'photo1.jpg','page1.html')">
+            Add to Cart
+          </button>
+          <br>
+          <br><!-- 🔹 OFFCANVAS CART -->
+<div class="offcanvas offcanvas-end" id="cartCanvas">
+  <div class="offcanvas-header">
+    <h5 class="fw-bold">My Cart</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <!-- Cart Items -->
+    <div id="show"></div>
+
+    <hr>
+    <h5 class="text-end fw-bold">
+      Total: ₹<span id="price">0</span>
+    </h5>
+  </div>
+</div>
+<!-- ✅ Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 1️⃣ Cart array from localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // ✅ Page load pe cart items show aur count update
+    showCartItems();
+
+    // 2️⃣ Add to Cart function
+    function addToCart(name, price, image, link) {
+        let product = { name, price, image, link };
+        cart.push(product);
+
+        // Save updated cart in localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update cart count
+        document.getElementById("cartCount").innerText = cart.length;
+
+        // Render items in offcanvas
+        showCartItems();
+    }
+
+    // 3️⃣ Show Cart Items function
+    function showCartItems() {
+        let container = document.getElementById("show");
+        container.innerHTML = "";
+
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price;
+
+            container.innerHTML += `
+            <div style="display: flex; align-items: center; gap: 16px; padding: 12px; margin: 8px 0; border-radius: 12px; background: #ffffff; border: 1px solid #f0f0f0; box-shadow: 0 2px 5px rgba(0,0,0,0.03); font-family: sans-serif;">
+                <div style="flex-shrink: 0;">
+                    <img src="${item.image}" alt="${item.name}" 
+                         style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; background: #f9f9f9; border: 1px solid #f1f1f1;">
+                </div>
+                <div style="flex: 1; min-width: 0;">
+                    <div style="font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        ${item.name}
+                    </div>
+                    <div style="font-size: 14px; font-weight: 700; color: #059669;">
+                        ₹${item.price}
+                    </div>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <button onclick="removeItem(${index})" title="Remove item"
+                        style="border: none; background: #fef2f2; color: #ef4444; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; line-height: 0; transition: 0.2s;">
+                        &times;
+                    </button>
+                </div>
+            </div>
+            `;
+        });
+
+        // ✅ Update total price
+        document.getElementById("price").innerText = total;
+
+        // ✅ Update cart count on page load or after changes
+        document.getElementById("cartCount").innerText = cart.length;
+    }
+
+    // 4️⃣ Remove item function
+    function removeItem(index) {
+        cart.splice(index, 1);
+
+        // Save updated cart
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update cart count
+        document.getElementById("cartCount").innerText = cart.length;
+
+        // Re-render cart items
+        showCartItems();
+    }
+</script>
+
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Payments</title>
+</head>
+<body>
+
+  <table width="600" align="center" border="1" cellpadding="15">
+    <tr>
+      <td>
+        <p>Secure Payments</p>
+
+        <strong>Guaranteed Safe Checkout</strong>
+        <br><br>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" height="30" alt="Visa">
+        &nbsp;&nbsp;
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" height="30" alt="Mastercard">
+        &nbsp;&nbsp;
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" height="30" alt="American Express">
+        &nbsp;&nbsp;
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg" height="30" alt="Discover">
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+

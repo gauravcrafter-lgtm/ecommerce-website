@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="allpage.css">
+    <!-- External JS file link -->
+    <script src="projects.js"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <title>Allensolly</title>
+  <style>
+    /* stop slider website */
+      :root{
+    overflow-x: hidden;
+  }
+    /* =================== */
+
+    /* Default sab black */
+.navbar-nav .nav-link {
+  color: #000 !important;
+  transition: color 0.3s ease;
+}
+
+/* Sirf Home hamesha red */
+.navbar-nav .nav-link.home-active {
+  color: red !important;
+  font-weight: 600;
+}
+
+/* Baaki links hover pe red */
+.navbar-nav .nav-link:not(.home-active):hover {
+  color: red !important;
+}
+
+  </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100" style="margin:0;">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="#">ALLENSOLLY</a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- COLLAPSE -->
+    <div class="collapse navbar-collapse" id="nav">
+
+      <!-- MENU (CENTER) -->
+      <ul class="navbar-nav mx-lg-auto gap-4">
+        <li class="nav-item   " ><a class="nav-link active  "  style="color: black;" href="HOME.HTML">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color:black;" href="carrers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: black;" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- ICONS (RHS + SAME GAP AS LOGO RHS) -->
+      <div class="d-flex align-items-center gap-4 ms-lg-3">
+
+        <!-- User icon -->
+        <a href="#" class="text-dark fs-5">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+          <!-- Shopping cart icon with Offcanvas toggle -->
+        <a href="#" class="text-dark fs-5 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+          <div class="cart-box">
+            <i class="fa-solid fa-cart-shopping"></i>
+            
+          </div>
+          <span id="cartCount"  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">0</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Banner text -->
+<div class="d-flex justify-content-center align-items-center" style="background-color: black; color: white; height: 30px;">
+  <p class="m-0" style="font-size: 13px;">Get 15% off on your first order.</p>
+</div>
+
+<!-- Image Banner -->
+<div class="bgcont">
+  <div class="smphoto position-relative">
+    
+     <img src="fashion.jpg" alt="Fashion" class="img-fluid rounded shadow" style="height: 650px; object-fit: cover;">
+
+    
+    <!-- Overlay Text -->
+    <div    class="texts position-absolute top-80 start-60 translate-middle text-center text-light px-4 " style="top: 300px;" >
+      <h1 class="display-4 fw-bold mb-3 text-center mx-auto" 
+    style="font-family: 'Arial', sans-serif; max-width: 99%; width: 600px;">
+    Timeless Fashion for the Modern Wardrobe
+</h1>
+      <p class="fs-6 mb-4" style="font-family: 'Arial', sans-serif; font-weight: 400; max-width: 600px; margin: 0 auto;">
+        Discover timeless fashion for Men, Women, and Kids – crafted for comfort, designed for confidence.
+      </p>
+      <button type="button" class="btn btn-danger px-4 py-2" style="border-radius: 18px; font-weight: 500; font-size: 1rem;">Explore the Collection</button>
+    </div>
+  </div>
+</div>
+
+<!-- offcanva start ------------------------------------------------------------------------------------->
+   <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartOffcanvasLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <!-- Container jahan items dynamically inject honge -->
+    <div id="cartItems" class="d-flex flex-wrap gap-2">
+      <!-- JS se items yahan add honge -->
+    </div>
+
+    <!-- Total & Checkout -->
+    <div class="mt-3">
+      <h6>Your Total amount</h6><h6 id="totalPrice"></h6>
+    <button class="btn btn-dark bg-danger w-100 mt-2" onclick="location.href='order.html'">
+  🔒 Place Order
+</button>
+
+    </div>
+  </div>
+</div>
+<!-- offcanva end================================================================= -->
+
+<!-- New Arrival Section -->
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h2 class="fw-bold mb-2">New Arrivals</h2>
+      <p class="text-muted mb-0">Be the first to wear this season’s latest looks. Handpicked and freshly styled.</p>
+    </div>
+    <button class="btn btn-danger rounded-pill px-4 py-2">SEE WHAT’S NEW</button>
+  </div>
+</div>
+
+<!-- Cards Section -->
+<div class="container my-5">
+  <div class="row">
+
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card border-0">
+              <a href="page1.html">
+ <img src="photo3.jpg" class="card-img-top rounded" alt="Product">
+</a>
+        
+        <div class="card-body px-0">
+          <h6 class="fw-bold mb-1">White T shirt</h6>
+          <small class="text-muted">men</small>
+          <p class="fw-semibold mt-2 mb-2">₹100.00 – ₹150.00</p>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary btn-sm me-1">M</button>
+            <button class="btn btn-outline-secondary btn-sm me-1">L</button>
+            <button class="btn btn-outline-secondary btn-sm">XL</button>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6f2dbd;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#1f7a8c;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6b8e23;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card border-0">
+       <a href="page3.html">
+  <img src="photo2.jpg" class="card-img-top rounded" alt="Product">
+</a>
+        <div class="card-body px-0">
+          <h6 class="fw-bold mb-1">Red T shirt</h6>
+          <small class="text-muted">men</small>
+          <p class="fw-semibold mt-2 mb-2">₹150.00 – ₹200.00</p>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary btn-sm me-1">M</button>
+            <button class="btn btn-outline-secondary btn-sm me-1">L</button>
+            <button class="btn btn-outline-secondary btn-sm">XL</button>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6f2dbd;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#1f7a8c;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6b8e23;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card border-0">
+        <a href="page2.html">
+        <img src="photo1.jpg" class="card-img-top rounded" alt="Product">
+        </a>
+        <div class="card-body px-0">
+          <h6 class="fw-bold mb-1">Light Red T shirt</h6>
+          <small class="text-muted">Men</small>
+          <p class="fw-semibold mt-2 mb-2">₹250.00 – ₹300.00</p>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary btn-sm me-1">M</button>
+            <button class="btn btn-outline-secondary btn-sm me-1">L</button>
+            <button class="btn btn-outline-secondary btn-sm">XL</button>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6f2dbd;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#1f7a8c;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6b8e23;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Pink Background Section -->
+<div class="container-fluid" style=" padding:3rem 0; margin:0;">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-2">Our Categories</h2>
+    <p class="text-muted mb-5">Explore a wide range of styles, handpicked to suit every taste and need.</p>
+
+    <div class="row g-5">
+
+      <!-- Mens Wear -->
+      <div class="col-md-6">
+        <div class="position-relative">
+          <img src="men.jpg" class="img-fluid w-100 rounded-4" style="border-radius:50px;" alt="">
+          <div class="bg-white text-center px-5 py-3 rounded-4 position-absolute start-50 translate-middle-x shadow" style="bottom:-30px;">
+            <h6 class="fw-bold mb-1">Mens Wear</h6>
+            <small class="text-danger">Shop Now</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Womens Wear -->
+      <div class="col-md-6">
+        <div class="position-relative">
+          <img src="cao.jpg" class="img-fluid w-100 rounded-4" style="border-radius:50px;" alt="">
+          <div class="bg-white text-center px-5 py-3 rounded-4 position-absolute start-50 translate-middle-x shadow" style="bottom:-30px;">
+            <h6 class="fw-bold mb-1">Womens Wear</h6>
+            <small class="text-danger">Shop Now</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kids Wear -->
+      <div class="col-md-6 mt-5">
+        <div class="position-relative">
+          <img src="men2.jpg" class="img-fluid w-100 rounded-4" style="border-radius:50px;" alt="">
+          <div class="bg-white text-center px-5 py-3 rounded-4 position-absolute start-50 translate-middle-x shadow" style="bottom:-30px;">
+            <h6 class="fw-bold mb-1">boys Wear</h6>
+            <small class="text-danger">Shop Now</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accessories -->
+      <div class="col-md-6 mt-5">
+        <div class="position-relative">
+          <img src="accesories.jpg" class="img-fluid w-100 rounded-4" style="border-radius:50px;" alt="">
+          <div class="bg-white text-center px-5 py-3 rounded-4 position-absolute start-50 translate-middle-x shadow" style="bottom:-30px;">
+            <h6 class="fw-bold mb-1">Accessories</h6>
+            <small class="text-danger">Shop Now</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+
+
+<!--  -->
+   <!-- bestseller section -->
+    <center>
+  <div class="center-wrapper mt-5  ">
+    <div class="bestseller-section">
+      <h1>Bestsellers</h1>
+      <p>
+        From cult-favorite jackets to must-have dresses – <br>
+        These are our customer faves.
+      </p>
+    </div>
+  </div>
+  </center>
+  <!-- bestseller section end -->
+
+  <!-- Cards Section -->
+<div class="container my-5">
+  <div class="row">
+
+    <!-- Card 4 -->
+    <div class="col-md-4">
+      <div class="card border-0">
+           <a href="PAGE5.HTML">
+        <img src="photo4.jpg" class="card-img-top rounded" alt="Product">
+        </a>
+       
+        
+        <div class="card-body px-0">
+          <h6 class="fw-bold mb-1">Flowline Sweater</h6>
+          <small class="text-muted">men</small>
+          <p class="fw-semibold mt-2 mb-2">₹240.00 – ₹280.00</p>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary btn-sm me-1">M</button>
+            <button class="btn btn-outline-secondary btn-sm me-1">L</button>
+            <button class="btn btn-outline-secondary btn-sm">XL</button>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6f2dbd;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#1f7a8c;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6b8e23;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-md-4">
+      <div class="card border-0">
+         <a href="PAGE6.HTML">
+        <img src="photo5.jpg" class="card-img-top rounded" alt="Product">
+        </a>
+       
+        <div class="card-body px-0">
+          <h6 class="fw-bold mb-1">Wonderful Hoddie</h6>
+          <small class="text-muted">Women</small>
+          <p class="fw-semibold mt-2 mb-2">₹200.00 – ₹250.00</p>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary btn-sm me-1">M</button>
+            <button class="btn btn-outline-secondary btn-sm me-1">L</button>
+            <button class="btn btn-outline-secondary btn-sm">XL</button>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6f2dbd;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#1f7a8c;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6b8e23;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-md-4">
+      <div class="card border-0">
+ <a href="PAGE7.HTML">
+        <img src="photo6.jpg" class="card-img-top rounded" alt="Product">
+        </a>
+        
+        
+        <div class="card-body px-0">
+          <h6 class="fw-bold mb-1">Denim Jeans</h6>
+          <small class="text-muted">Mens</small>
+          <p class="fw-semibold mt-2 mb-2">₹300.00 – ₹450.00</p>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary btn-sm me-1">M</button>
+            <button class="btn btn-outline-secondary btn-sm me-1">L</button>
+            <button class="btn btn-outline-secondary btn-sm">XL</button>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6f2dbd;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#1f7a8c;"></span>
+            <span class="rounded-circle" style="width:18px;height:18px;background:#6b8e23;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- counter banner offer time -->
+ <!-- Image Banner -->
+<div class="gap"></div>
+<div class="bgcont">
+  <div class="smphoto">
+    <img src="fashion.jpg"style="height: 650px; "  class="img-fluid">
+    <div class="texts">
+      <h1 class="fs-1 fw-bold text-light mb-0"></h1>
+      <p class="paragraph fs-6"></p>
+      <!-- offer time -->
+       
+  <section  class="sale-section  "  >
+    <div class="overlay  "  >
+      <h1>Hurry Up! Get Up to 50% Off</h1>
+      <p>Step into summer with sun-ready styles at can't-miss prices.</p>
+
+      <div class="countdown">
+        <div class="time-box">
+          <span id="days">01</span>
+          <small>DAY</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">04</span>
+          <small>HOURS</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">27</span>
+          <small>MINS</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>SEC</small>
+        </div>
+      </div>
+
+      <button id="sec" class="sale-btn">SHOP THE SUMMER SALE</button>
+    </div>
+  </section>
+       <!-- offer time end -->
+      <br>
+      <div class="paragraph d-flex flex-wrap align-items-center">
+        <p class="mb-0"></p>
+      </div>
+    </div>
+  </div>
+</div>
+ <!--  -->
+   <section class="shopper-review-section">
+  <div class="shopper-container">
+    <h2 class="shopper-heading">What Our<br>Shoppers Say</h2>
+    <p class="shopper-subtext">Store that nails fashion and comfort.</p>
+
+    <div class="review-card-wrapper">
+
+      <!-- Review Card 1 -->
+      <div class="review-box">
+        <span class="review-quote">“</span>
+        <p class="review-text">
+          Velora has completely transformed how I shop for clothes.
+          Every piece feels thoughtfully designed and incredibly
+          comfortable — from their polos to their jackets.
+        </p>
+
+        <div class="review-user">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+          <span>Jessica M., San Diego</span>
+        </div>
+      </div>
+
+      <!-- Review Card 2 -->
+      <div class="review-box review-highlight">
+        <span class="review-quote">“</span>
+        <p class="review-text">
+          I'm always looking for clean, versatile styles I can wear
+          to work or on the weekends — and Velora delivers.
+          The craftsmanship is amazing.
+        </p>
+
+        <div class="review-user">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+          <span>Darren L., New York</span>
+        </div>
+      </div>
+
+      <!-- Review Card 3 -->
+      <div class="review-box">
+        <span class="review-quote">“</span>
+        <p class="review-text">
+          Shopping for myself and my daughter usually means bouncing
+          between stores, but Velora made it easy. Stylish, comfortable,
+          and built to last.
+        </p>
+
+        <div class="review-user">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg">
+          <span>Michelle T., Chicago</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ----------------------------------- -->
+ <section class="py-5">
+  <div class="container text-center">
+
+    <h2 class="fw-bold">How It Works</h2>
+    <p class="text-muted mb-5">Just Pick, Pack and Ship</p>
+
+    <div class="bg-white rounded-4 shadow-sm p-4">
+      <div class="row align-items-center text-start g-4">
+
+        <!-- Shop Styles -->
+        <div class="col-md-4 d-flex gap-3">
+          <div class="border border-danger rounded-circle d-flex align-items-center justify-content-center text-danger fs-3"
+               style="width:90px;height:60px;">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Shop Styles</h6>
+            <p class="text-muted mb-0">
+              Browse our curated collections for Men, Women, Kids & Accessories.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-1 d-none d-md-block border-start"></div>
+
+        <!-- Pick Your Fit -->
+        <div class="col-md-3 d-flex gap-3">
+          <div class="border border-danger rounded-circle d-flex align-items-center justify-content-center text-danger fs-3"
+               style="width:90px;height:60px;">
+           <i class="fa-solid fa-truck-pickup"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Pick Your Fit</h6>
+            <p class="text-muted mb-0">
+              Find your perfect size with detailed fit guides.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-1 d-none d-md-block border-start"></div>
+
+        <!-- Checkout Fast -->
+        <div class="col-md-3 d-flex gap-6">
+          <div class="border border-danger rounded-circle d-flex align-items-center justify-content-center text-danger fs-3"
+               style="width:90px;height:60px;">
+            <i class="fa-solid fa-check-to-slot"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Checkout Fast</h6>
+            <p class="text-muted mb-0">
+              Enjoy a quick and secure checkout experience.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ====image area ========================================== -->
+ <section class="py-5">
+  <div class="container text-center">
+
+    <!-- Heading -->
+    <h2 class="fw-bold mb-2">Get 10% Off on Your First Order</h2>
+    <p class="text-muted mb-5">
+      Plus exclusive access to product drops, style tips, and insider deals.
+    </p>
+
+    <!-- Images Row -->
+    <div class="row g-2 justify-content-center">
+
+    <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+      <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+
+      <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+      <div class="col-sm-3">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+             class="img-fluid rounded-4" alt="fashion">
+      </div>
+
+    </div>
+
+    <!-- Follow -->
+    <div class="mt-5 d-flex justify-content-center align-items-center gap-2">
+      <i class="bi bi-instagram text-danger fs-5"></i>
+      <span class="fw-semibold">Follow us</span>
+      <span class="text-muted">@Allensolly</span>
+    </div>
+
+  </div>
+</section>
+ <!-- ====image area end==================================================== -->
+<!-- ============2nd last section start -->
+ <section class="py-5" style="background:#fff1f2;">
+  <div class="container">
+    <div class="row text-center g-3">
+
+      <!-- Free Delivery -->
+      <div class="col-sm-3">
+        <i class="fa-solid fa-truck fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Free Standard Delivery</h6>
+        <p class="text-muted mb-0">On all Orders Over $100</p>
+      </div>
+
+      <!-- Quick Delivery -->
+      <div class="col-sm-3">
+        <i class="fa-regular fa-truck fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Quick Delivery</h6>
+        <p class="text-muted mb-0">Delivery within 3 Days across US</p>
+      </div>
+
+      <!-- Secure Payments -->
+      <div class="col-sm-3">
+        <i class="fa-solid fa-money-bill fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Secure Payments</h6>
+        <p class="text-muted mb-0">Secure Payment Methods</p>
+      </div>
+
+      <!-- Customer Support -->
+      <div class="col-sm-3">
+        <i class="fa-solid fa-user fa-2x text-danger"></i>
+        <h6 class="fw-bold mt-3">Top Rated Customer Service</h6>
+        <p class="text-muted mb-0">Quick Responses & Solutions</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- ==========================2nd last section end -->
+ <!-- ================= FOOTER START ================= -->
+  
+  <footer class=" text-black pt-5 mt-auto">
+  <div class="container">
+
+    <div class="row ">
+
+      <!-- Brand -->
+      <div class="col-md-3">
+        <h4 class="fw-bold d-flex align-items-center gap-2">
+          
+          Allensolly
+        </h4>
+
+        <p class="text-secondary mt-3">
+          Classic looks for Men,<br>
+          Women & Kids.
+        </p>
+
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled text-secondary">
+          <li class="text">Home</li>
+          <li class="mt-2">Shop</li>
+          <li class="mt-2">About</li>
+          <li class="mt-2">Contact</li>
+        </ul>
+      </div>
+
+      <!-- Shop -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Shop</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>Mens Wear</li>
+          <li class="mt-2">Womens Wear</li>
+          <li class="mt-2">Kids Wear</li>
+          <li class="mt-2">Accessories</li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Help</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>FAQ’s</li>
+          <li class="mt-2">Return Policy</li>
+          <li class="mt-2">Order Status</li>
+          <li class="mt-2">Shipping & Delivery</li>
+        </ul>
+      </div>
+
+      <!-- My Profile -->
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3">My Profile</h6>
+        <ul class="list-unstyled text-secondary">
+          <li>My Account</li>
+          <li class="mt-2">Track Order</li>
+          <li class="mt-2">My Cart</li>
+          <li class="mt-2">Order History</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary ">
+
+    <div class="text-center text-secondary ">
+      © 2025 Clothing Store. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+<!-- ================= FOOTER END ================= -->
+ 
+
+</body>
+
+</html>
